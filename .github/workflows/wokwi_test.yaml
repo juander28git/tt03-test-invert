@@ -28,6 +28,13 @@ jobs:
         repository: tinytapeout/tt-support-tools
         path: tt
 
+    # need python and requirements
+    - name: setup python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    - run: pip install -r tt/requirements.txt
+
     # fetch the truth table
     - name: fetch Verilog and build config
       run: ./tt/tt_tool.py --create-user-config
