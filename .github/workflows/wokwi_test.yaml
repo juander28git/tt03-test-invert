@@ -2,7 +2,7 @@ name: wokwi_test
 # either manually started, or on a schedule
 on: [ push, workflow_dispatch ]
 jobs:
-  test:
+  wokwi_test:
     # ubuntu
     runs-on: ubuntu-latest
     steps:
