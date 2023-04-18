@@ -37,7 +37,7 @@ project:
 # This info will be automatically collected and used to make a datasheet for the chip.
 documentation: 
   author:       "Juan Sanchez"      # Your name
-  discord:      "juander28"      # Your discord handle
+  discord:      "juander28#1964"      # Your discord handle
   title:        "FSM_LAT"      # Project title
   description:  "FSM look at table"      # Short description of what your project does
   how_it_works: "el proyecto es una maquina de estados a la cual se le puede cambiar la secuencia de los estados por medio de una entrada serial "      # Longer description of how the project works
