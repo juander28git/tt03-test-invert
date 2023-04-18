@@ -44,25 +44,27 @@ documentation:
   external_hw:  "Something to sequence nrst, ring_en, trig and the sel bits"      # Describe any external hardware needed
   language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
   doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
-  clock_hz:     6000       # Clock frequency in Hz (if required)
+  clock_hz:     0       # Clock frequency in Hz (if required)
   picture:      "pic/tt_speed_test.pdf"      # relative path to a picture in your repository
   inputs:             # a description of what the inputs do
 
 # A description of what the outputs do
+  inputs:             # a description of what the inputs do
+    - oi_in[0]
+    - oi_in[1]
+    - oi_in[2]
+    - oi_in[3]
+    - oi_in[4]
+    - oi_in[5]
+    - oi_in[6]
+    - oi_in[7]
   outputs:
-    - oi_out[0]
-    - oi_out[0]
-    - oi_out[0]
-    - oi_out[0]
-    - oi_out[0]
-    - oi_out[0]
-    - oi_out[0]
+    - oi_out[1]
+    - oi_out[2]
+    - oi_out[3]
+    - oi_out[4]
+    - oi_out[5]
+    - oi_out[6]
+    - oi_out[7]
     - oi_out[0]
 
-# The following fields are optional
-  external_hw:  ""      # Describe any external hardware needed
-  discord:      ""      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
-  tag:          " "     # encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
-  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
-  clock_hz:     0       # Clock frequency in Hz (if required)
-  picture:      ""      # relative path to a picture in your repository
