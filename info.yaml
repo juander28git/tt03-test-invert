@@ -1,11 +1,28 @@
 --- 
 # TinyTapeout project information
 project:
-  wokwi_id:    361728533238569985 # If using wokwi, set this to your project's ID
-#  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
-#    - counter.v
-#    - decoder.v
-#  top_module:  "seven_segment_seconds"      # put the name of your top module here, make it unique by prepending your github username
+  wokwi_id:    0 # If using wokwi, set this to your project's ID
+source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+- chaout.v
+- clk_sel.v
+- clock_div.v
+- clock_divider.v
+- Comparador.v
+- counter.v
+- d_ff.v
+- desition.v
+- dff_5.v
+- FSM
+- FSM_LAT.v
+- jk_ff.v
+- mux2_1.v
+- PISO.v
+- piso_1_bit.v
+- PISO_div.v
+- registro20bits.v
+- SIPO.v
+
+top_module:  "FSM_LAT"      # put the name of your top module here, make it unique by prepending your github username
 
 
 # As everyone will have access to all designs, try to make it easy for someone new to your design to know what
@@ -30,29 +47,29 @@ documentation:
 
 # A description of what the inputs do
   inputs:               
-    - a
-    - b
-    - c
-    - d
-    - e
-    - f
-    - g
-    - dot
+    - oi_in[0]
+    - oi_in[0]
+    - oi_in[0]
+    - oi_in[0]
+    - oi_in[0]
+    - oi_in[0]
+    - oi_in[0]
+    - oi_in[0]
 # A description of what the outputs do
   outputs:
-    - segment a
-    - segment b
-    - segment c
-    - segment d
-    - segment e
-    - segment f
-    - segment g
-    - dot
+    - oi_out[0]
+    - oi_out[0]
+    - oi_out[0]
+    - oi_out[0]
+    - oi_out[0]
+    - oi_out[0]
+    - oi_out[0]
+    - oi_out[0]
 
 # The following fields are optional
   external_hw:  ""      # Describe any external hardware needed
-  discord:      "mattvenn#1907"      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
-  tag:          "test"  # encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  discord:      ""      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  tag:          " "     # encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
   doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
   clock_hz:     0       # Clock frequency in Hz (if required)
   picture:      ""      # relative path to a picture in your repository
