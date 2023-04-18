@@ -39,7 +39,7 @@ documentation:
   author:       "Juan Sanchez"      # Your name
   discord:      "juander28"      # Your discord handle
   title:        "FSM_LAT"      # Project title
-  description:  ""      # Short description of what your project does
+  description:  "FSM look at table"      # Short description of what your project does
   how_it_works: "el proyecto es una maquina de estados a la cual se le puede cambiar la secuencia de los estados por medio de una entrada serial "      # Longer description of how the project works
   how_to_test:  "para cagar la secuencnia de estados se debe conectar un relog el cual este sincronixado con la secuencia serial para programar la maquina de estados = y para pasar de estado la entrada conectada a cada estado debe estar en 1"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
   external_hw:  "un fpga que permita generar un relog una salida serial para programar la secuencia de la maquina de estados "      # Describe any external hardware needed
