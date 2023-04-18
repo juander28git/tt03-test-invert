@@ -21,23 +21,26 @@
 
 
 module FSM_LAT(
-					 input clk_in,
-					 input reset,
-					 input [4:0]in,
-					 input REG_STATE,
-					 output [7:0]outt				 
+					 input [7:0]io_in,
+					 output [7:0]io_out			 
 					 );
 					 
 wire clk,sel_clk,sel_out,clk_ring,ok;
 wire [4:0]state1,state2,state3,state4,state5;
-wire [7:0]out;				 
-				 
+wire [7:0]out;		
+
+
+wire clk_in;
+wire reset;
+wire [4:0]in;
+wire REG_STATE;
+			 	 
 assign out[5] =clk;
 
 				SIPO Sipo(
-							.clock(clk_in),
-							.rst(reset),
-							.in(REG_STATE),
+							.clock(io_in[7]),
+							.rst(io_in[6]),
+							.in(io_in[5]),
 							.en(1),
 							.clk_sel(sel_clk),
 							.out_sel(sel_out),
@@ -51,16 +54,16 @@ assign out[5] =clk;
 							
 							
 				clk_sel clock_selector(
-												.clk1(clk_in),
-												.clk2(clk_in),
+												.clk1(io_in[7]),
+												.clk2(clk_ring),
 												.select(sel_clk),
 												.out(clk));
 					
 					
 				 FSM State_machine(
 					 .clk(clk),
-					 .reset(reset),
-					 .in(in),
+					 .reset(io_in[6]),
+					 .in(io_in[4:0]),
 					 .ok(ok),
 					 .jump1(state1),
 					 .jump2(state2),
@@ -75,13 +78,13 @@ assign out[5] =clk;
 			chaout changa_out(
 									.in(out),
 									.sel(1),
-									.out_in(outt[7:5]),
-									.out(outt[4:0])
+									.out_in(io_out[7:5]),
+									.out(io_out[4:0])
 									);
 									
 	desition desition(
 			.clk(clk),
-			.rst(reset),
+			.rst(io_in[6]),
 			.timer(out[4]),
 			.register(out[3]),
 			.comp(out[6]));
@@ -89,7 +92,7 @@ assign out[5] =clk;
 				
 		   PISO_div PISO(
 			.clk(clk),
-			.rst(reset),
+			.rst(io_in[6]),
 			.DATA({sel_out,sel_clk,state1,state2,state3,state4,state5,5'b01010}),
 			.shift_in(0),
 			.out(out[7])
