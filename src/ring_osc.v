@@ -11,13 +11,20 @@ module ring_osc(input nrst,output osc);
   
   // setup loop of inverters
   // http://svn.clairexen.net/handicraft/2015/ringosc/ringosc.v
-  wire [NUM_INVERTERS-1:0] delay_in, delay_out;
+  wire [NUM_INVERTERS-1:0] delay_in,delay_in_16, delay_out,delay_out_16 ;
   wire osc_out;
-  inv_with_delay_16 idelay [NUM_INVERTERS-1:0] (
+  inv_with_delay_16 idelay_16 [NUM_INVERTERS-1:0] (
+        .A(delay_in_16),
+        .Y(delay_out_16)
+    );
+	 
+  inv_with_delay idelay [NUM_INVERTERS-1:0] (
         .A(delay_in),
         .Y(delay_out)
     );
-  assign delay_in = {delay_out[NUM_INVERTERS-2:0], osc_out};
+  assign delay_in = {delay_out_16};
+  assign delay_in_16 = {delay_out[NUM_INVERTERS-2:0], osc_out};
   nand2_with_delay nand2_with_delay(.A(nrst),.B(delay_out[NUM_INVERTERS-1]),.Y(osc_out));
   assign osc = osc_out;
 endmodule
+
