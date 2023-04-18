@@ -36,12 +36,12 @@ project:
 # This info will be automatically collected and used to make a datasheet for the chip.
 documentation: 
   author:       "Juan Sanchez"      # Your name
-  discord:      "N/A"      # Your discord handle
+  discord:      "juander28"      # Your discord handle
   title:        "FSM_LAT"      # Project title
-  description:  "Make two rings with the same number of stages but measure how their frequency differs.  Measure if they can influence eachother."      # Short description of what your project does
-  how_it_works: "uses a register and some combinational logic"      # Longer description of how the project works
-  how_to_test:  "after reset, assert trigger.  Use sel bits to get result"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
-  external_hw:  "Something to sequence nrst, ring_en, trig and the sel bits"      # Describe any external hardware needed
+  description:  ""      # Short description of what your project does
+  how_it_works: "el proyecto es una maquina de estados a la cual se le puede cambiar la secuencia de los estados por medio de una entrada serial "      # Longer description of how the project works
+  how_to_test:  "para cagar la secuencnia de estados se debe conectar un relog el cual este sincronixado con la secuencia serial para programar la maquina de estados = y para pasar de estado la entrada conectada a cada estado debe estar en 1"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "un fpga que permita generar un relog una salida serial para programar la secuencia de la maquina de estados "      # Describe any external hardware needed
   language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
   doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
   clock_hz:     0       # Clock frequency in Hz (if required)
