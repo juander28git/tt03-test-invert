@@ -2,8 +2,7 @@
 # TinyTapeout project information
 project:
   wokwi_id: 0 # If using wokwi, set this to your project's ID
-source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
-- chaout.v
+source_files:  - chaout.v      # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
 - clk_sel.v
 - clock_div.v
 - clock_divider.v
