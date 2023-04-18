@@ -7,7 +7,7 @@ module ring_osc(input nrst,output osc);
   // counter depth. 
   // scan clk slowing can be done externally to the TT IC or with the clk div. 
 
-  localparam NUM_INVERTERS = 150; //  must be an even number
+  localparam NUM_INVERTERS = 300; //  must be an even number
   
   // setup loop of inverters
   // http://svn.clairexen.net/handicraft/2015/ringosc/ringosc.v
