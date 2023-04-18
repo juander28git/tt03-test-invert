@@ -77,7 +77,7 @@ assign out[5] =clk;
 		 
 			chaout changa_out(
 									.in(out),
-									.sel(1),
+									.sel(sel_out),
 									.out_in(io_out[7:5]),
 									.out(io_out[4:0])
 									);
@@ -97,7 +97,8 @@ assign out[5] =clk;
 			.shift_in(0),
 			.out(out[7])
 			);
-
+	ring_osc RING(.nrst(1),
+		      .osc(clk_ring));
 					 
 endmodule
 
